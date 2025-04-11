@@ -13,10 +13,10 @@ header {
   display: flex;
   flex-direction: column; /* stack logo and nav vertically */
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   background-color: #fef6e4;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  gap: 0.5rem; /* reduce vertical gap between logo and nav */
+  gap: 0.1rem; /* reduce vertical gap between logo and nav */
 }
 
 .logo {
