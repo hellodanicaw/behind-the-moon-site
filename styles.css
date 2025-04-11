@@ -8,22 +8,19 @@ body {
   margin: 0;
   padding: 0;
 }
-
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem; /* reduced padding */
   background-color: #fef6e4;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+  height: 220px; /* increase as needed */
+  max-width: none;
   display: block;
-  margin-bottom: 1rem;
 }
 
 nav ul {
