@@ -19,7 +19,7 @@ header {
 }
 
 .logo {
-  height: 120px; /* This will now take effect */
+  height: 400px; /* This will now take effect */
   max-width: 100%;
   display: block;
 }
