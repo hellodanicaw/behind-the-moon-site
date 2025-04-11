@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: red;
+  background: #fffdf6;
   color: #333;
   margin: 0;
   padding: 0;
@@ -11,19 +11,19 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 1rem;
   background-color: #fef6e4;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   display: block;
-  margin: 2rem auto;
+  margin-bottom: 1rem;
 }
 
 nav ul {
