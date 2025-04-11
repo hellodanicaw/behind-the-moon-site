@@ -11,20 +11,20 @@ body {
 
 header {
   display: flex;
-  flex-direction: column; /* stack logo and nav vertically */
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 0; /* 1 logo's worth of vertical space */
   background-color: #fef6e4;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  gap: 0.1rem; /* reduce vertical gap between logo and nav */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 0.5rem; /* keep nav close to logo */
 }
 
 .logo {
-  height: 500px; /* adjust as needed */
-  max-width: none;
-  display: block;
-  margin: 0; /* removes any default spacing */
+  height: 220px; /* or your desired logo height */
+  max-width: 100%;
+  margin: 0;
   padding: 0;
+  display: block;
 }
 
 nav ul {
@@ -34,6 +34,13 @@ nav ul {
   justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+img.logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 nav a {
