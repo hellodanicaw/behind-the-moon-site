@@ -19,9 +19,11 @@ header {
 }
 
 .logo {
-  height: 400px; /* This will now take effect */
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   display: block;
+  margin: 2rem auto;
 }
 
 nav ul {
