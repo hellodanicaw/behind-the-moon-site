@@ -10,17 +10,17 @@ body {
 }
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem; /* reduced padding */
+  padding: 1rem;
   background-color: #fef6e4;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
-  height: 220px; /* increase as needed */
-  max-width: none;
-  display: block;
+  height: 280px;
+  max-width: 100%;
+  margin-bottom: 1rem;
 }
 
 nav ul {
