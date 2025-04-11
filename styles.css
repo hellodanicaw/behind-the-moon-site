@@ -1,0 +1,98 @@
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffdf6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fef6e4;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+      height: 60px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: bold;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: #fff9f0;
+    }
+    
+    .shop,
+    .newsletter {
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      color: #777;
+    }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fef6e4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #fff9f0;
+  }
+  
+  .shop,
+  .newsletter {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f0f0f0;
+    color: #777;
+  }
