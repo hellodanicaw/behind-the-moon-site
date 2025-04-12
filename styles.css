@@ -33,6 +33,10 @@ header {
 
 .logo {
   height: 100px;
+  border: 2px solid black;
+  padding: 10px;
+  display: inline block;
+
 }
 
 .moon {
