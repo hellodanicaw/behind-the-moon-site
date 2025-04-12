@@ -90,11 +90,7 @@ nav a:hover {
   color: #2b4c7e; /* slightly darker blue text */
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: #fff9f0;
-}
+
 
 .shop,
 .newsletter {
@@ -109,11 +105,18 @@ footer {
   color: #777;
 }
 
+.hero {
+  text-align: center;
+  padding: 2rem 2rem; /* reduced from 4rem to 2rem to bring everything up */
+  background-color: #fff9f0;
+}
+
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
   color: #16bcea;
   text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* soft dark shadow */
+  margin-top: 0.5rem;   /* reduced top margin */
+  margin-bottom: 0.5rem; /* reduced bottom margin to tighten spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
