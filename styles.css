@@ -27,6 +27,11 @@ header {
   display: block;
 }
 
+.moon {
+  height: 60px; /* Try 50–70px for starters */
+  width: auto;
+}
+
 nav ul {
   list-style: none;
   display: flex;
