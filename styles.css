@@ -1,6 +1,3 @@
-
-
-
 body {
   font-family: 'Futura', sans-serif;
   background: #fffdf6;
@@ -36,7 +33,6 @@ header {
   border: 2px solid black;
   padding: 10px;
   display: inline block;
-
 }
 
 .moon {
@@ -75,6 +71,14 @@ nav a {
   text-decoration: none;
   color: #4e74af;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #dce8f8; /* light blue background on hover */
+  color: #2b4c7e; /* slightly darker blue text */
 }
 
 .hero {
