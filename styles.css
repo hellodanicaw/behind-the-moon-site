@@ -37,6 +37,9 @@ header {
 .moon {
   height: 140px;
   width: auto;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 200, 0.6); /* soft yellow-white glow */
+  border-radius: 50%; /* optional: make it softer if the image is round */
+  transition: box-shadow 0.3s ease;
 }
 
 .moon.flip {
