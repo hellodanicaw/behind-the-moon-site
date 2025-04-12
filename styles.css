@@ -19,17 +19,29 @@ header {
   gap: 0.5rem; /* keep nav close to logo */
 }
 
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.logo-wrapper img {
+  display: inline-block;
+}
+
 .logo {
-  height: 700px; /* or your desired logo height */
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  display: block;
+  height: 100px;
 }
 
 .moon {
-  height: 60px; /* Try 50–70px for starters */
+  height: 60px;
   width: auto;
+}
+
+.moon.flip {
+  transform: scaleX(-1);
 }
 
 nav ul {
