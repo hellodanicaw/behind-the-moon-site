@@ -108,4 +108,5 @@ h1 {
   color: #16bcea;
   text-align: center;
   margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(22, 188, 234, 0.6), 0 0 20px rgba(22, 188, 234, 0.4);
 }
