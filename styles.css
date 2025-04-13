@@ -118,5 +118,5 @@ h1 {
   text-align: center;
   margin-top: 0.5rem;   /* reduced top margin */
   margin-bottom: 0.5rem; /* reduced bottom margin to tighten spacing */
-  text-shadow: 2px 2px 6px rgba(0.5, 0.5, 0.5, 0.5);
+  text-shadow: 2px 2px 6px rgba(1, 01, 1, 1);
 }
