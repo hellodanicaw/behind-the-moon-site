@@ -20,8 +20,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 32px;           /* more space between moons and logo */
   margin-top: 30px;
+  padding: 1rem;       /* gives breathing room around the whole block */
+  flex-wrap: wrap;     /* helps avoid overflow on small screens */
 }
 
 .logo-wrapper img {
@@ -32,6 +34,8 @@ header {
   height: 100px;
   border: 6px solid black;
   display: inline block;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 .moon {
