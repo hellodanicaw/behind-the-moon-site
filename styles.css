@@ -10,20 +10,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0; /* 1 logo's worth of vertical space */
+  padding: 1rem 0;
   background-color: #4e4b4b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  gap: 0.5rem; /* keep nav close to logo */
+  gap: 0.5rem;
 }
 
 .logo-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;           /* more space between moons and logo */
+  gap: 32px;
   margin-top: 30px;
-  padding: 1rem;       /* gives breathing room around the whole block */
-  flex-wrap: wrap;     /* helps avoid overflow on small screens */
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .logo-wrapper img {
@@ -33,7 +33,7 @@ header {
 .logo {
   height: 100px;
   border: 6px solid black;
-  display: inline block;
+  display: inline-block;
   object-fit: contain;
   max-width: 100%;
 }
@@ -41,18 +41,16 @@ header {
 .moon {
   height: 140px;
   width: auto;
-  box-shadow: 0 0 20px 5px rgba(255, 255, 200, 0.6); /* soft yellow-white glow */
-  border-radius: 50%; /* optional: make it softer if the image is round */
+  box-shadow: 0 0 20px 5px rgba(255, 255, 200, 0.6);
+  border-radius: 50%;
   transition: box-shadow 0.3s ease;
 }
 
-/* Left moon */
 .logo-wrapper img.moon:first-child {
   transform: scaleX(-1);
   margin-right: 30px;
 }
 
-/* Right moon */
 .logo-wrapper img.moon:last-child {
   margin-left: 30px;
 }
@@ -65,15 +63,7 @@ nav ul {
   justify-content: center;
   padding: 0;
   margin: 0;
-  list-style: none;
 }
-
-/*@font-face {
-  font-family: 'CoolFont';
-  src: url('./fonts/cool-font.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}*/
 
 img.logo {
   height: 160px;
@@ -92,8 +82,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #f0f8ff; /* soft light color — try white (#fff) or light blue */
-  background-color: transparent; /* just in case there's leftover background */
+  color: #f0f8ff;
+  background-color: transparent;
 }
 
 .shop,
@@ -115,7 +105,7 @@ footer {
 
 .hero {
   text-align: center;
-  padding: 2rem 2rem; /* reduced from 4rem to 2rem to bring everything up */
+  padding: 2rem 2rem;
   background-color: #fff9f0;
 }
 
@@ -124,8 +114,8 @@ h1 {
   font-weight: bold;
   color: #16bcea;
   text-align: center;
-  margin-top: 0.5rem;   /* reduced top margin */
-  margin-bottom: 0.5rem; /* reduced bottom margin to tighten spacing */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-shadow: 2px 2px 6px rgba(1.5, 1.5, 1.5, 1.5);
 }
 
@@ -142,16 +132,16 @@ h1 {
   display: flex;
   gap: 0.5rem;
   animation: scroll-left 40s linear infinite;
-  width: max-content;         /* ✅ Ensures the track expands to fit all images */
-  white-space: nowrap;        /* ✅ Prevents wrapping */
+  width: max-content;
+  white-space: nowrap;
 }
 
 .scroller-track img {
   height: 50vh;
-  max-height: 600px; /* much taller for big, immersive visuals */
+  max-height: 600px;
   flex-shrink: 0;
   border-radius: 8px;
-  border: none; /* optional: remove border for seamless look */
+  border: none;
   object-fit: cover;
 }
 
@@ -165,7 +155,7 @@ h1 {
 .image-scroller:hover .scroller-track {
   animation-play-state: paused;
 }
-/* Scroll animation */
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0%);
@@ -178,7 +168,7 @@ h1 {
 .newsletter {
   text-align: center;
   padding: 2rem;
-  background-color: #fffdf6; /* keep background consistent with rest of site */
+  background-color: #fffdf6;
 }
 
 .newsletter input[type="email"] {
@@ -234,16 +224,14 @@ h1 {
   }
 }
 
-/* Space between input and button */
 #mlb2-24783084 .ml-form-horizontalRow {
-  gap: 0.75rem; /* Adds space between input and button */
+  gap: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-/* Make sure input doesn't stretch too wide */
 #mlb2-24783084 input[type="email"] {
   font-family: 'Futura', sans-serif;
   padding: 0.5rem 1rem;
@@ -254,7 +242,6 @@ h1 {
   max-width: 90%;
 }
 
-/* Style the subscribe button to match your vibe */
 #mlb2-24783084 button[type="submit"] {
   background-color: #4e74af;
   color: white;
@@ -308,60 +295,53 @@ h1 {
 
 .buy-button:hover {
   background-color: #2b4c7e;
+}
 
-  .mini-edition {
-    background-color: #fff9f0;
-    padding: 2rem;
-    text-align: center;
-    border-top: 2px dashed #4e74af;
-    border-bottom: 2px dashed #4e74af;
-    margin: 2rem 0;
-  }
-  
-  .mini-edition h2 {
-    color: #4e74af;
-    font-size: 1.8rem;
-    margin-top: 1rem;
-  }
-  
-  .mini-edition p {
-    font-size: 1rem;
-    color: #333;
-    max-width: 600px;
-    margin: 1rem auto 1.5rem auto;
-    line-height: 1.6;
-  }
-  
-  .mini-button {
-    background-color: #4e74af;
-    color: white;
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-  }
-  
-  .mini-button:hover {
-    background-color: #2b4c7e;
-  }
-  
-  .mini-thumbnail {
-    max-width: 250px;
-    width: 80%;
-    height: auto;
-    border-radius: 12px;
-    border: 3px solid #4e74af;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+.mini-edition {
+  background-color: #fff9f0;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px dashed #4e74af;
+  border-bottom: 2px dashed #4e74af;
+  margin: 2rem 0;
+}
 
- 
+.mini-edition h2 {
+  color: #4e74af;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
 
-  .mini-thumbnail {
-    width: 100%;
-    max-width: 150px; /* 👈 shrink it way down */
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem auto;
-  }
+.mini-edition p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 1rem auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.mini-button {
+  background-color: #4e74af;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.mini-button:hover {
+  background-color: #2b4c7e;
+}
+
+.mini-thumbnail {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 12px;
+  border: 3px solid #4e74af;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
