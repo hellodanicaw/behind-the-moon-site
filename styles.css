@@ -139,7 +139,8 @@ h1 {
 }
 
 .scroller-track img {
-  height: 600px; /* much taller for big, immersive visuals */
+  height: 50vh;
+  max-height: 600px; /* much taller for big, immersive visuals */
   flex-shrink: 0;
   border-radius: 8px;
   border: none; /* optional: remove border for seamless look */
@@ -150,6 +151,7 @@ h1 {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
+  display: flex;
 }
 
 .image-scroller:hover .scroller-track {
@@ -193,4 +195,24 @@ h1 {
 
 .newsletter button:hover {
   background-color: #2b4c7e;
+}
+
+@media (max-width: 600px) {
+  .logo-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scroller-track img {
+    height: 30vh;
+  }
+
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
 }
