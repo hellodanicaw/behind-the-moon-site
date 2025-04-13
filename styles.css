@@ -132,8 +132,10 @@ h1 {
 
 .scroller-track {
   display: flex;
-  gap: 0.5rem; /* smaller gap between images */
-  animation: scroll-left 10s linear infinite; /* slower scroll to match bigger size */
+  gap: 0.5rem;
+  animation: scroll-left 10s linear infinite;
+  width: max-content;         /* ✅ Ensures the track expands to fit all images */
+  white-space: nowrap;        /* ✅ Prevents wrapping */
 }
 
 .scroller-track img {
