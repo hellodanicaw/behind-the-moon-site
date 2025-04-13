@@ -133,7 +133,7 @@ h1 {
 .scroller-track {
   display: flex;
   gap: 0.5rem; /* smaller gap between images */
-  animation: scroll-left 40s linear infinite; /* slower scroll to match bigger size */
+  animation: scroll-left 25s linear infinite; /* slower scroll to match bigger size */
 }
 
 .scroller-track img {
