@@ -120,3 +120,40 @@ h1 {
   margin-bottom: 0.5rem; /* reduced bottom margin to tighten spacing */
   text-shadow: 2px 2px 6px rgba(1.5, 1.5, 1.5, 1.5);
 }
+
+.image-scroller {
+  overflow: hidden;
+  width: 100%;
+  background-color: #fffdf6;
+  padding: 1rem 0;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+
+.scroller-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left 30s linear infinite;
+  animation-play-state: running;
+}
+
+.image-scroller:hover .scroller-track {
+  animation-play-state: paused;
+}
+
+.scroller-track img {
+  height: 200px;
+  flex-shrink: 0;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+}
+
+/* Scroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
