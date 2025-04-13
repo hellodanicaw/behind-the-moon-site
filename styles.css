@@ -94,12 +94,14 @@ nav a:hover {
   background-color: transparent; /* just in case there's leftover background */
 }
 
-
-
 .shop,
 .newsletter {
   padding: 2rem;
   text-align: center;
+}
+
+.nav-newsletter {
+  white-space: nowrap;
 }
 
 footer {
@@ -304,4 +306,3 @@ h1 {
 
 .buy-button:hover {
   background-color: #2b4c7e;
-}
