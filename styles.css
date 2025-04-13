@@ -146,6 +146,12 @@ h1 {
   object-fit: cover;
 }
 
+.scroller-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
 .image-scroller:hover .scroller-track {
   animation-play-state: paused;
 }
