@@ -356,9 +356,11 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
+ 
+
   .mini-thumbnail {
-    max-width: 300px;
     width: 100%;
+    max-width: 150px; /* 👈 shrink it way down */
     height: auto;
     display: block;
     margin: 0 auto 1rem auto;
