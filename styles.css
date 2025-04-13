@@ -171,6 +171,12 @@ h1 {
   }
 }
 
+.newsletter {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fffdf6; /* keep background consistent with rest of site */
+}
+
 .newsletter input[type="email"] {
   padding: 0.5rem 1rem;
   border: 2px solid #4e74af;
@@ -192,9 +198,12 @@ h1 {
 }
 
 .newsletter-tagline {
+  font-family: 'Futura', sans-serif;
   font-size: 1rem;
   color: #4e74af;
-  margin-bottom: 1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
 }
 
 .newsletter button:hover {
