@@ -158,3 +158,33 @@ h1 {
     transform: translateX(-50%);
   }
 }
+
+.newsletter input[type="email"] {
+  padding: 0.5rem 1rem;
+  border: 2px solid #4e74af;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 250px;
+  margin-right: 0.5rem;
+}
+
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: #4e74af;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-tagline {
+  font-size: 1rem;
+  color: #4e74af;
+  margin-bottom: 1rem;
+}
+
+.newsletter button:hover {
+  background-color: #2b4c7e;
+}
