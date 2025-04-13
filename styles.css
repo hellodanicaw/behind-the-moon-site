@@ -132,22 +132,21 @@ h1 {
 
 .scroller-track {
   display: flex;
-  gap: 2rem;
-  animation: scroll-left 30s linear infinite;
-  animation-play-state: running;
+  gap: 0.5rem; /* smaller gap between images */
+  animation: scroll-left 40s linear infinite; /* slower scroll to match bigger size */
+}
+
+.scroller-track img {
+  height: 350px; /* much taller for big, immersive visuals */
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: none; /* optional: remove border for seamless look */
+  object-fit: cover;
 }
 
 .image-scroller:hover .scroller-track {
   animation-play-state: paused;
 }
-
-.scroller-track img {
-  height: 200px;
-  flex-shrink: 0;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-}
-
 /* Scroll animation */
 @keyframes scroll-left {
   0% {
