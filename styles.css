@@ -137,7 +137,7 @@ h1 {
 }
 
 .scroller-track img {
-  height: 350px; /* much taller for big, immersive visuals */
+  height: 450px; /* much taller for big, immersive visuals */
   flex-shrink: 0;
   border-radius: 8px;
   border: none; /* optional: remove border for seamless look */
