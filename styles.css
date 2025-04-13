@@ -133,7 +133,7 @@ h1 {
 .scroller-track {
   display: flex;
   gap: 0.5rem;
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 20s linear infinite;
   width: max-content;         /* ✅ Ensures the track expands to fit all images */
   white-space: nowrap;        /* ✅ Prevents wrapping */
 }
