@@ -359,7 +359,7 @@ h1 {
 
 .cover-thumbnail-wrapper {
   text-align: center;
-  margin-bottom: 1rem; /* eliminate space below the wrapper */
+  margin-bottom: 0; /* eliminate space below the wrapper */
 }
 
 .hover-thumbnail {
