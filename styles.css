@@ -270,7 +270,8 @@ h1 {
   font-family: 'Futura', sans-serif;
   font-size: 2rem;
   color: #4e74af;
-  margin: 0.1rem 0 0.5rem 0; /* top, right, bottom, left */
+  margin-top: 0; /* top, right, bottom, left */
+  margin-bottom: 0.5rem;
 }
 
 .shop p {
@@ -354,7 +355,7 @@ h1 {
 
 .cover-thumbnail-wrapper {
   text-align: center;
-  margin: 0 auto .25rem auto;
+  margin: 0 auto 0 auto;
 }
 
 .hover-thumbnail {
@@ -367,6 +368,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   position: relative;
   z-index: 1;
+  margin-bottom: 0;
 }
 
 .hover-thumbnail:hover {
