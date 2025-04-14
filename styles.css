@@ -335,7 +335,7 @@ h1 {
 }
 
 .mini-thumbnail {
-  max-width: 220px;
+  max-width: 150px;
   width: 80%;
   height: auto;
   border-radius: 12px;
