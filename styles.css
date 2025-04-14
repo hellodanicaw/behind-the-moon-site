@@ -170,6 +170,11 @@ h1 {
   }
 }
 
+.newsletter h2 {
+  font-family: 'Futura', sans-serif;
+  font-size: 1rem;
+  color: #050505;
+}
 .newsletter {
   text-align: center;
   padding: 2rem;
