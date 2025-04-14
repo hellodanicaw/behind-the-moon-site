@@ -275,7 +275,7 @@ h1 {
   font-family: 'Futura', sans-serif;
   font-size: 2rem;
   color: #4e74af;
-  margin-top: 1rem;       /* 👈 new */
+  margin-top: 0.25rem;       /* 👈 new */
   margin-bottom: 0.5rem;
 }
 
@@ -360,7 +360,7 @@ h1 {
 
 .cover-thumbnail-wrapper {
   text-align: center;
-  margin: 1rem auto 0.5rem auto; /* tweak this! top is 1rem */
+  margin: o.5rem auto 0.5rem auto; /* tweak this! top is 1rem */
 }
 
 .hover-thumbnail {
@@ -372,7 +372,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   display: block;
-  margin: 0 auto -0.25rem auto; /* pull the image slightly closer to the section below */
+  margin: 0 auto -1.25rem auto; /* pull the image slightly closer to the section below */
   position: relative;
   z-index: 1;
 }
