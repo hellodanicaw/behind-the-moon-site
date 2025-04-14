@@ -87,7 +87,11 @@ nav a:hover {
   background-color: transparent;
 }
 
-.shop,
+.shop {
+  padding: 0 2rem 2rem 2rem; /* removes top padding only */
+  text-align: center;
+}
+
 .newsletter {
   padding: 2rem;
   text-align: center;
@@ -355,7 +359,7 @@ h1 {
 
 .cover-thumbnail-wrapper {
   text-align: center;
-  margin-bottom: 0; /* eliminate space below the wrapper */
+  margin-bottom: 1rem; /* eliminate space below the wrapper */
 }
 
 .hover-thumbnail {
