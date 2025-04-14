@@ -335,7 +335,7 @@ h1 {
 }
 
 .mini-thumbnail {
-  max-width: 150px;
+  max-width: 100px;
   width: 80%;
   height: auto;
   border-radius: 12px;
@@ -347,7 +347,7 @@ h1 {
 }
 
 .mini-thumbnail:hover {
-  transform: scale(3.5);
+  transform: scale(3.8);
   z-index: 10;
   position: relative;
 }
