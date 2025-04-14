@@ -354,7 +354,7 @@ h1 {
 
 .cover-thumbnail-wrapper {
   text-align: center;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto .25rem auto;
 }
 
 .hover-thumbnail {
