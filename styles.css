@@ -426,12 +426,13 @@ h1 {
 }
 
 .popup-content input[type="email"] {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
   width: 100%;
+  box-sizing: border-box; /* Prevents padding from pushing past the container */
   margin-bottom: 1rem;
   border: 2px solid #4e74af;
-  border-radius: 6px;
+  border-radius: 0; /* match sharp corners */
 }
 
 .popup-content button[type="submit"] {
