@@ -246,14 +246,14 @@ h1 {
   font-family: 'Futura', sans-serif;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  border: 2px solid #4e74af;
+  border: 2px solid #333;
   border-radius: 6px;
   width: 260px;
   max-width: 90%;
 }
 
 #mlb2-24783084 button[type="submit"] {
-  background-color: #4e74af;
+  background-color: #333;
   color: white;
   border: none;
   font-family: 'Futura', sans-serif;
