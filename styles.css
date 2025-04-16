@@ -490,3 +490,11 @@ a.gumroad-button.buy-button {
   display: inline-block !important;
   text-align: center;
 }
+
+.newsletter-inline-label {
+  font-family: 'Futura', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
