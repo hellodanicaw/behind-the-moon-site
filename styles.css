@@ -473,3 +473,20 @@ h1 {
   padding: 0.4rem 1rem;
   border-radius: 6px;
 }
+
+.gumroad-button.buy-button {
+  font-size: 0.75rem;         /* smaller text */
+  padding: 0.3rem 0.8rem;     /* smaller padding */
+  border-radius: 4px;         /* slightly less round */
+  line-height: 1;
+  display: inline-block;
+}
+
+a.gumroad-button.buy-button {
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 6px !important;
+  line-height: 1.2 !important;
+  display: inline-block !important;
+  text-align: center;
+}
