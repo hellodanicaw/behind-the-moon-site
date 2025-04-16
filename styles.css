@@ -467,3 +467,9 @@ h1 {
   color: #1d222b;
   margin-top: 0.5rem;
 }
+
+.small-button {
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+}
