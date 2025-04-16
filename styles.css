@@ -460,3 +460,10 @@ h1 {
   color: #666;
   cursor: pointer;
 }
+
+.price-tag {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #333;
+  margin-left: 0.5rem;
+}
