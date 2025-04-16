@@ -279,7 +279,8 @@ h1 {
 .shop h2 {
   font-family: 'Futura', sans-serif;
   font-size: 2rem;
-  color: #050505;       /* 👈 new */
+  color: #050505;  
+  margin-top: 0.1rem;     /* 👈 new */
   margin-bottom: 0.5rem;
 }
 
