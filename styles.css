@@ -279,62 +279,6 @@ h1 {
   position: relative;
 }
 
-/* ========== COVER + PREVIEW SCROLL (HOVER) ========== */
-
-.cover-hover {
-  position: relative;
-  max-width: 300px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.cover-hover img,
-.cover-hover .peek-inside-preview {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
-.cover-image {
-  position: relative;
-  z-index: 2;
-  transition: opacity 0.4s ease;
-}
-
-.peek-inside-preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  overflow-y: hidden;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.cover-hover:hover .cover-image {
-  opacity: 0;
-}
-
-.cover-hover:hover .peek-inside-preview {
-  opacity: 1;
-  overflow-y: scroll;
-}
-
-.peek-inside-preview img {
-  display: block;
-  width: 100%;
-}
-
-.hover-hint {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: -1rem;
-}
-
 /* ========== GRID ========== */
 
 .product-grid {
@@ -414,4 +358,52 @@ footer {
   .newsletter button {
     width: 100%;
   }
+}
+
+/* ========== PEEK INSIDE PREVIEW (under cover) ========== */
+
+.peek-wrapper {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 320px;
+}
+
+.static-cover {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+.peek-trigger {
+  font-size: 1rem;
+  color: #4e74af;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.peek-trigger:hover {
+  color: #2b4c7e;
+}
+
+.peek-below {
+  max-height: 420px;
+  overflow-y: scroll;
+  margin-top: 0.75rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.peek-wrapper:hover .peek-below {
+  display: block;
+}
+
+.peek-below img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
 }
