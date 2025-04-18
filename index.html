@@ -1,241 +1,309 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
   <title>Behind the Moon Books</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Futura', sans-serif;
+      background: #fffdf6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      background-color: #4e4b4b;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      gap: 0.5rem;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin-top: 30px;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 100px;
+      border: 6px solid black;
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    .moon {
+      height: 140px;
+      width: auto;
+      box-shadow: 0 0 20px 5px rgba(255, 255, 200, 0.6);
+      border-radius: 50%;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4e74af;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      color: #f0f8ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 2rem;
+      background-color: #fff9f0;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #16bcea;
+      margin: 0.5rem 0;
+    }
+
+    .peek-wrapper {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 320px;
+    }
+
+    .static-cover {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+    }
+
+    .peek-trigger {
+      font-size: 1rem;
+      color: #4e74af;
+      text-decoration: underline;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+
+    .peek-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .peek-popup {
+      background: #fffdf6;
+      padding: 1rem;
+      width: 480px;
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .peek-popup img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .peek-close {
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      background: #ffffff;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .collapsible-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .collapsible-section details {
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      background-color: #fafafa;
+    }
+
+    .collapsible-section summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo-wrapper">
-      <img src="moon_logo.svg" alt="Left Moon" class="moon" />
-      <img src="logo.svg" alt="Behind the Moon Books Logo" class="logo" />
-      <img src="moon_logo.svg" alt="Right Moon" class="moon flip" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#" id="open-popup" class="nav-newsletter">Join the List</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1>WELCOME TO BEHIND THE MOON BOOKS</h1>
-      <p>A whimsical world of dot-to-dot discoveries, curious creatures, and creativity.</p>
-    </section>
+<header>
+  <div class="logo-wrapper">
+    <img src="moon_logo.svg" alt="Left Moon" class="moon" />
+    <img src="logo.svg" alt="Behind the Moon Books Logo" class="logo" />
+    <img src="moon_logo.svg" alt="Right Moon" class="moon" />
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#" id="open-popup">Join the List</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <div class="image-scroller">
-      <div class="scroller-wrapper">
-        <div class="scroller-track">
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.png" />
-          <img src="creature06.png" />
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.jpg" />
-          <img src="creature06.png" />
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.jpg" />
-          <img src="creature06.png" />
-        </div>
-      </div>
-    </div>
-
-    <div class="peek-wrapper">
-      <img src="cover.png" alt="Curious Creatures Field Guide Cover" class="static-cover" />
-      <div class="peek-trigger" onclick="togglePeek()">👀 Take a peek inside</div>
-    </div>
-
-
-<div class="product-grid">
-  <section id="paperback" class="shop">
-    <div class="price-display">$9.99 <span class="price-tax-note">+ tax</span></div>
-    <h2>Buy the Book</h2>
-    <p>Grab the <strong>Curious Creatures Field Guide</strong> in paperback! Over 50 dot-to-dot puzzles and creatures to observe, name, and color.</p>
-    <a class="amazon-button buy-button" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">📖 Buy on Amazon</a>
+<main>
+  <section class="hero">
+    <h1>WELCOME TO BEHIND THE MOON BOOKS</h1>
+    <p>A whimsical world of dot-to-dot discoveries, curious creatures, and creativity.</p>
   </section>
 
-  <section id="shop" class="shop">
-    <div class="price-display">$6.99 <span class="price-tax-note">+ tax</span></div>
-    <h2>Get the PDF</h2>
-    <p>Want a printable version? Download the <strong>Curious Creatures Field Guide</strong> instantly and start connecting the dots!</p>
-    <a class="gumroad-button buy-button small-button" href="https://gumroad.com/l/zmxae" target="_blank">Download PDF</a>
-  </section>
-</div>
+  <div class="peek-wrapper">
+    <img src="cover.png" alt="Book Cover" class="static-cover" />
+    <div class="peek-trigger" onclick="togglePeek()">👀 Take a peek inside</div>
+  </div>
+</main>
 
-  <section class="mini-edition">
-    <div class="mini-content">
-      <img src="1.png" alt="Mini Edition Cover" class="mini-thumbnail" />
-      <h2>Try the Free Mini Edition!</h2>
-      <p>
-        Step into the world of <strong>Curious Creatures</strong> with this printable preview!<br>
-        Download 4 hybrid dot-to-dot puzzles + Field Notes pages to color, name, and explore.
-      </p>
-      <a href="https://behindthemoonbooks.gumroad.com/l/cnitgv" class="mini-button" target="_blank">Download Now</a>
-    </div>
-  </section>
-
-    <!-- <section id="newsletter" class="newsletter">
-      <h2>Join the Mailing List</h2>
-      <p class="newsletter-tagline">
-        Sign up to be the first to hear about new releases! Plus gain access to free puzzles, special offers, and exclusive Behind The Moon news!
-      </p>
-      Start MailerLite Embed -->
-     
-      <div id="mlb2-24783084" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-24783084">
-        <div class="ml-form-align-center ">
-          <div class="ml-form-embedWrapper embedForm">
-            <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" method="post" target="_blank">
-                <div class="ml-form-formContent horozintalForm">
-                  <div class="ml-form-horizontalRow">
-                    <div class="ml-input-horizontal">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <input type="hidden" name="ml-submit" value="1" />
-                <input type="hidden" name="anticsrf" value="true" />
-              </form>
-            </div>
-            <div class="ml-form-successBody row-success" style="display: none">
-              <div class="ml-form-successContent">
-                <h4>Thank you!</h4>
-                <p>You have successfully joined our subscriber list.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End MailerLite Embed -->
-    </section>
-    <section class="collapsible-section">
-      <details>
-        <summary>About Behind the Moon Books</summary>
-        <p>
-          Behind the Moon Books is an independent publisher and illustrator creating fun, screen-free activity books that spark imagination and curiosity. Our first title, the <em>Curious Creatures Field Guide</em>, invites kids to connect the dots, color imaginative hybrids, and record their own discoveries in a field guide format.
-        </p>
-        <p>
-          We're passionate about crafting hands-on books that blend storytelling, creativity, and learning—more are coming soon!
-        </p>
-      </details>
-    
-      <details>
-        <summary>Contact</summary>
-        <p>
-          Have a question or collaboration idea? Reach out any time at:
-          <a href="mailto:contact@behindthemoonbooks.com">contact@behindthemoonbooks.com</a>
-        </p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Behind the Moon Books</p>
-  </footer>
-
-  <!-- MailerLite Script -->
-  <script>
-    function ml_webform_success_24783084() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-24783084 .row-success').show();
-      $('.ml-subscribe-form-24783084 .row-form').hide();
-    }
-  </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
-
-  <!-- Newsletter Popup -->
-<div id="popup-overlay" class="popup-overlay">
+<div class="popup-overlay" id="popup-overlay">
   <div class="popup-content">
     <button id="close-popup" class="close-popup">&times;</button>
     <h2>Join The Mailing List!</h2>
-    <p>Sign up to be the first to hear about new releases! Plus gain access to free puzzles, special offers, and exclusive Behind The Moon news!</p>
+    <p>Sign up to hear about new releases + get free puzzles and perks!</p>
     <form action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" method="post" target="_blank">
-      <input type="email" name="fields[email]" placeholder="Your email" required />
-      <button type="submit">Subscribe</button>
+      <input type="email" name="fields[email]" placeholder="Your email" required style="width: 80%; padding: 0.5rem; margin: 1rem 0;" />
+      <br>
+      <button type="submit" style="padding: 0.5rem 1rem;">Subscribe</button>
     </form>
   </div>
 </div>
 
-<div id="peekOverlay" class="peek-overlay">
+<div class="peek-overlay" id="peekOverlay">
   <div class="peek-popup">
     <img src="peek_inside_preview.png" alt="Peek Inside Pages" />
   </div>
   <button class="peek-close" onclick="closePeek()">×</button>
 </div>
 
-<script>
-  const popupOverlay = document.getElementById('popup-overlay');
-  const closePopupBtn = document.getElementById('close-popup');
-  const openPopupBtn = document.getElementById('open-popup');
+<section class="collapsible-section" id="contact">
+  <details>
+    <summary>Contact</summary>
+    <p>Email us at <a href="mailto:contact@behindthemoonbooks.com">contact@behindthemoonbooks.com</a></p>
+  </details>
+</section>
 
-  // Show popup on first load only (not again after closing)
-  window.addEventListener('load', function () {
-    // Only show the popup once per session
+<footer>
+  <p>&copy; 2025 Behind the Moon Books</p>
+</footer>
+
+<script>
+  const popup = document.getElementById("popup-overlay");
+  const closeBtn = document.getElementById("close-popup");
+  const openBtn = document.getElementById("open-popup");
+
+  window.addEventListener('load', () => {
     if (!sessionStorage.getItem('popupShown')) {
-      popupOverlay.style.display = 'flex';
+      popup.style.display = 'flex';
       sessionStorage.setItem('popupShown', 'true');
     }
   });
 
-  // Close popup
-  closePopupBtn.addEventListener('click', function () {
-    popupOverlay.style.display = 'none';
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
   });
 
-  // Reopen popup from nav
-  openPopupBtn.addEventListener('click', function (e) {
+  openBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    popupOverlay.style.display = 'flex';
+    popup.style.display = "flex";
   });
-</script>
 
-<script>
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      document.getElementById('popup-overlay').style.display = 'flex';
-    }, 3000); // Show after 3 seconds
-
-    document.getElementById('close-popup').addEventListener('click', function () {
-      document.getElementById('popup-overlay').style.display = 'none';
-    });
-  });
-</script>
-<script>
-  document.getElementById('open-popup').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('popup-overlay').style.display = 'flex';
-  });
-</script>
-<script async src="https://gumroad.com/js/gumroad.js"></script>
-<script>
   function togglePeek() {
-    document.getElementById('peekOverlay').style.display = 'flex';
+    document.getElementById("peekOverlay").style.display = "flex";
   }
 
   function closePeek() {
-    document.getElementById('peekOverlay').style.display = 'none';
+    document.getElementById("peekOverlay").style.display = "none";
   }
 </script>
 </body>
