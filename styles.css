@@ -446,3 +446,20 @@ footer {
   background: #f0f0f0;
   color: #000;
 }
+
+.newsletter-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #fff9f0;
+}
+
+.newsletter-inline-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.ml-form-embedContainer {
+  max-width: 500px;
+  margin: 0 auto;
+}
