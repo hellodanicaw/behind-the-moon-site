@@ -92,7 +92,7 @@
     </section>
 
     <section class="collapsible-section" id="about">
-      <details open>
+      <details>
         <summary>About Behind the Moon Books</summary>
         <p>Behind the Moon Books is an independent publisher creating fun, screen-free activity books that spark imagination and curiosity.</p>
         <p>Our first title, the <em>Curious Creatures Field Guide</em>, invites kids to connect the dots, color imaginative hybrids, and record their own discoveries in a field guide format.</p>
@@ -112,12 +112,12 @@
   </footer>
 
   <!-- Popups -->
-  <div id="popup-overlay" class="popup-overlay">
+  <div id="popup-overlay" class="popup-overlay" style="display: none;">
     <div class="popup-content">
       <button id="close-popup" class="close-popup">&times;</button>
       <h2>Join The Mailing List!</h2>
       <p>Be the first to hear about new releases, plus get free puzzles and special offers!</p>
-      <form action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" method="post" target="_blank">
+      <form action="https://assets.mailerlite.com/jsonp/..." method="post" target="_blank">
         <input type="email" name="fields[email]" placeholder="Your email" required />
         <button type="submit">Subscribe</button>
       </form>
@@ -138,34 +138,26 @@
       const closePopupBtn = document.getElementById('close-popup');
       const openPopupBtn = document.getElementById('open-popup');
   
-      // Show popup on first load (once per session)
+      // Ensure popup shows once on page load
       if (!sessionStorage.getItem('popupShown')) {
+        // Delay to allow DOM render
         setTimeout(() => {
           popupOverlay.style.display = 'flex';
           sessionStorage.setItem('popupShown', 'true');
-        }, 1000); // delay 1 second to give page a chance to load
+        }, 500); // half-second delay to help with rendering
       }
   
-      // Close popup when user clicks close button
+      // Close popup when "X" is clicked
       closePopupBtn.addEventListener('click', function () {
         popupOverlay.style.display = 'none';
       });
   
-      // Reopen popup manually
+      // Open popup manually from nav
       openPopupBtn.addEventListener('click', function (e) {
         e.preventDefault();
         popupOverlay.style.display = 'flex';
       });
     });
-  </script>
-  <script>
-    function togglePeek() {
-      document.getElementById('peekOverlay').style.display = 'flex';
-    }
-  
-    function closePeek() {
-      document.getElementById('peekOverlay').style.display = 'none';
-    }
   </script>
 </body>
 </html>
