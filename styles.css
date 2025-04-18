@@ -553,3 +553,21 @@ a.gumroad-button.buy-button {
   font-size: 1.05rem;
   line-height: 1.6;
 }
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.product-grid .shop {
+  flex: 1 1 400px;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+}
