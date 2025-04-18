@@ -199,5 +199,15 @@
   });
 </script>
 <script async src="https://gumroad.com/js/gumroad.js"></script>
+<script>
+  function togglePeek() {
+    const preview = document.getElementById("peekContent");
+    if (preview.style.display === "block") {
+      preview.style.display = "none";
+    } else {
+      preview.style.display = "block";
+    }
+  }
+</script>
 </body>
 </html>
