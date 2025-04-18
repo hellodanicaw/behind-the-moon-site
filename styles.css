@@ -584,3 +584,43 @@ a.gumroad-button.buy-button {
 .peek-inside-link:hover {
   color: #000;
 }
+
+.peek-inside-container {
+  max-width: 300px;
+  height: 400px;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.peek-inside-preview {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.peek-inside-container:hover .peek-inside-preview {
+  overflow-y: scroll;
+}
+
+.peek-inside-container img {
+  display: block;
+  width: 100%;
+}
+
+.cover-hover {
+  max-width: 300px; /* Reduce this to whatever feels good visually */
+  margin: 2rem auto;
+  position: relative;
+}
+
+.cover-image {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: opacity 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
