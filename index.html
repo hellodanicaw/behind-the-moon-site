@@ -131,32 +131,49 @@
     <button class="peek-close" onclick="closePeek()">×</button>
   </div>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const popupOverlay = document.getElementById('popup-overlay');
       const closePopupBtn = document.getElementById('close-popup');
       const openPopupBtn = document.getElementById('open-popup');
+      const peekOverlay = document.getElementById('peekOverlay');
+      const peekClose = document.querySelector('.peek-close');
   
-      // Ensure popup shows once on page load
+      // 📫 Show popup on first load (once per session)
       if (!sessionStorage.getItem('popupShown')) {
-        // Delay to allow DOM render
         setTimeout(() => {
           popupOverlay.style.display = 'flex';
           sessionStorage.setItem('popupShown', 'true');
-        }, 500); // half-second delay to help with rendering
+        }, 500); // delay lets the DOM render
       }
   
-      // Close popup when "X" is clicked
+      // 📫 Close popup
       closePopupBtn.addEventListener('click', function () {
         popupOverlay.style.display = 'none';
       });
   
-      // Open popup manually from nav
+      // 📫 Manual open from nav
       openPopupBtn.addEventListener('click', function (e) {
         e.preventDefault();
         popupOverlay.style.display = 'flex';
       });
+  
+      // 👀 Open Peek Preview
+      window.togglePeek = function () {
+        peekOverlay.style.display = 'flex';
+      }
+  
+      // 👀 Close Peek Preview
+      window.closePeek = function () {
+        peekOverlay.style.display = 'none';
+      }
+  
+      // Optional fallback in case close button breaks
+      if (peekClose) {
+        peekClose.addEventListener('click', function () {
+          closePeek();
+        });
+      }
     });
   </script>
 </body>
