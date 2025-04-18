@@ -398,10 +398,6 @@ footer {
   display: none;
 }
 
-.peek-wrapper:hover .peek-below {
-  display: block;
-}
-
 .peek-below img {
   width: 100%;
   display: block;
