@@ -521,3 +521,35 @@ a.gumroad-button.buy-button {
   color: #666;
   margin-left: 2px;
 }
+
+.collapsible-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.collapsible-section details {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fafafa;
+  transition: box-shadow 0.3s ease;
+}
+
+.collapsible-section summary {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.collapsible-section details[open] {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.collapsible-section p {
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
