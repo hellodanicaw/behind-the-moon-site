@@ -444,3 +444,13 @@ footer {
   align-items: center;
   z-index: 1000;
 }
+
+.popup-content {
+  background-color: #fffdf6; /* solid background, same as site */
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* nice soft glow */
+}
