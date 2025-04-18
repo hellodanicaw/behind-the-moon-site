@@ -133,37 +133,30 @@
 
   <!-- Scripts -->
   <script>
-    const popupOverlay = document.getElementById('popup-overlay');
-    const closePopupBtn = document.getElementById('close-popup');
-    const openPopupBtn = document.getElementById('open-popup');
-
-    // Show popup on first load (once per session)
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', function () {
+      const popupOverlay = document.getElementById('popup-overlay');
+      const closePopupBtn = document.getElementById('close-popup');
+      const openPopupBtn = document.getElementById('open-popup');
+  
+      // Show popup on first load (once per session)
       if (!sessionStorage.getItem('popupShown')) {
-        popupOverlay.style.display = 'flex';
-        sessionStorage.setItem('popupShown', 'true');
+        setTimeout(() => {
+          popupOverlay.style.display = 'flex';
+          sessionStorage.setItem('popupShown', 'true');
+        }, 1000); // delay 1 second to give page a chance to load
       }
+  
+      // Close popup when user clicks close button
+      closePopupBtn.addEventListener('click', function () {
+        popupOverlay.style.display = 'none';
+      });
+  
+      // Reopen popup manually
+      openPopupBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        popupOverlay.style.display = 'flex';
+      });
     });
-
-    // Reopen popup from nav
-    openPopupBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      popupOverlay.style.display = 'flex';
-    });
-
-    // Close popup
-    closePopupBtn.addEventListener('click', function () {
-      popupOverlay.style.display = 'none';
-    });
-
-    // Peek preview toggle
-    function togglePeek() {
-      document.getElementById('peekOverlay').style.display = 'flex';
-    }
-
-    function closePeek() {
-      document.getElementById('peekOverlay').style.display = 'none';
-    }
   </script>
 </body>
 </html>
