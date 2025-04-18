@@ -57,7 +57,7 @@
           <img src="creature07.png" />
           <img src="creature05.png" />
           <img src="creature06.png" />
-        
+        </div>
       </div>
     </div>
 
@@ -66,22 +66,22 @@
       <div class="peek-trigger" onclick="togglePeek()">👀 Take a peek inside</div>
     </div>
 
-    <div class="product-grid" id="shop">
-      <section class="shop">
+    <div class="product-grid">
+      <section id="paperback" class="shop">
         <div class="price-display">$9.99 <span class="price-tax-note">+ tax</span></div>
         <h2>Buy the Book</h2>
         <p>Grab the <strong>Curious Creatures Field Guide</strong> in paperback! Over 50 dot-to-dot puzzles and creatures to observe, name, and color.</p>
         <a class="amazon-button buy-button" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">📖 Buy on Amazon</a>
       </section>
-
-      <section class="shop">
+    
+      <section id="shop" class="shop">
         <div class="price-display">$6.99 <span class="price-tax-note">+ tax</span></div>
         <h2>Get the PDF</h2>
         <p>Want a printable version? Download the <strong>Curious Creatures Field Guide</strong> instantly and start connecting the dots!</p>
         <a class="gumroad-button buy-button small-button" href="https://gumroad.com/l/zmxae" target="_blank">Download PDF</a>
       </section>
     </div>
-
+    
     <section class="mini-edition">
       <div class="mini-content">
         <img src="1.png" alt="Mini Edition Cover" class="mini-thumbnail" />
@@ -137,7 +137,7 @@
     const closePopupBtn = document.getElementById('close-popup');
     const openPopupBtn = document.getElementById('open-popup');
 
-    // Show popup on load (once per session)
+    // Show popup on first load (once per session)
     window.addEventListener('load', () => {
       if (!sessionStorage.getItem('popupShown')) {
         popupOverlay.style.display = 'flex';
@@ -145,15 +145,18 @@
       }
     });
 
-    openPopupBtn.addEventListener('click', (e) => {
+    // Reopen popup from nav
+    openPopupBtn.addEventListener('click', function (e) {
       e.preventDefault();
       popupOverlay.style.display = 'flex';
     });
 
-    closePopupBtn.addEventListener('click', () => {
+    // Close popup
+    closePopupBtn.addEventListener('click', function () {
       popupOverlay.style.display = 'none';
     });
 
+    // Peek preview toggle
     function togglePeek() {
       document.getElementById('peekOverlay').style.display = 'flex';
     }
