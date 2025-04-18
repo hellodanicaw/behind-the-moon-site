@@ -404,8 +404,8 @@ footer {
 .peek-popup {
   background: #fffdf6;
   padding: 1rem;
-  width: 360px; /* Just a bit bigger than the cover */
-  max-width: 90vw;
+  width: 480px; /* Just a bit bigger than the cover */
+  max-width: 95vw;
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
