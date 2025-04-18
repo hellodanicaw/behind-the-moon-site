@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Step into a whimsical world of dot-to-dot puzzles and curious creatures. Behind the Moon Books offers magical, screen-free activities for kids!" />
+  <meta property="og:title" content="Behind the Moon Books" />
+  <meta property="og:description" content="Explore our dot-to-dot activity books full of charming hybrid creatures and field guide adventures." />
+  <meta property="og:image" content="https://behindthemoonbooks.com/cover.png" />
+  <meta property="og:url" content="https://behindthemoonbooks.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Behind the Moon Books</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -112,15 +118,40 @@
   </footer>
 
   <!-- Popups -->
-  <div id="popup-overlay" class="popup-overlay">
-    <div class="popup-content">
-      <button id="close-popup" class="close-popup">&times;</button>
-      <h2>Join The Mailing List!</h2>
+<!-- Popups -->
+
+    <div id="popup-overlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <div class="popup-content">
+        <button id="close-popup" class="close-popup" aria-label="Close popup">&times;</button>
+        <h2 id="popup-title">Join The Mailing List!</h2>
       <p>Sign up to be the first to hear about new releases! Plus gain access to free puzzles, special offers, and exclusive Behind The Moon news!</p>
-      <form action="https://assets.mailerlite.com/jsonp/..." method="post" target="_blank">
-        <input type="email" name="fields[email]" placeholder="Your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
+  
+      <!-- BEGIN MailerLite Embed -->
+      <div id="mlb2-24783084" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-24783084">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email" autocomplete="email" required>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="primary">Subscribe</button>
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent" aria-live="polite">
+                <h4>Thank you!</h4>
+                <p>You have successfully joined our subscriber list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MailerLite Embed -->
     </div>
   </div>
 
@@ -131,66 +162,73 @@
     <button class="peek-close" onclick="closePeek()">×</button>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const popupOverlay = document.getElementById('popup-overlay');
-      const closePopupBtn = document.getElementById('close-popup');
-      const openPopupBtn = document.getElementById('open-popup');
-      const peekOverlay = document.getElementById('peekOverlay');
-      const peekClose = document.querySelector('.peek-close');
-  
-      // 📫 Show popup on first load (once per session)
-      if (!sessionStorage.getItem('popupShown')) {
-        setTimeout(() => {
-          popupOverlay.style.display = 'flex';
-          sessionStorage.setItem('popupShown', 'true');
-        }, 500); // delay lets the DOM render
-      }
-  
-      // 📫 Close popup
-      closePopupBtn.addEventListener('click', function () {
-        popupOverlay.style.display = 'none';
-      });
-  
-      // 📫 Manual open from nav
-      openPopupBtn.addEventListener('click', function (e) {
-        e.preventDefault();
+  <!-- 1. Core interaction script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popupOverlay = document.getElementById('popup-overlay');
+    const closePopupBtn = document.getElementById('close-popup');
+    const openPopupBtn = document.getElementById('open-popup');
+    const peekOverlay = document.getElementById('peekOverlay');
+    const peekClose = document.querySelector('.peek-close');
+
+    if (!sessionStorage.getItem('popupShown')) {
+      setTimeout(() => {
         popupOverlay.style.display = 'flex';
-      });
-  
-      // 👀 Open Peek Preview
-      window.togglePeek = function () {
-        peekOverlay.style.display = 'flex';
-      }
-  
-      // 👀 Close Peek Preview
-      window.closePeek = function () {
-        peekOverlay.style.display = 'none';
-      }
-  
-      // Optional fallback in case close button breaks
-      if (peekClose) {
-        peekClose.addEventListener('click', function () {
-          closePeek();
-        });
-      }
-    });
-  </script>
-  <script>
-    // Automatically open the "About" section when link is clicked
-    document.querySelector('a[href="#about"]').addEventListener('click', function () {
-      const aboutDetails = document.getElementById('about-details');
-      if (aboutDetails) {
-        aboutDetails.open = true;
-      }
+        sessionStorage.setItem('popupShown', 'true');
+      }, 500);
+    }
+
+    closePopupBtn.addEventListener('click', function () {
+      popupOverlay.style.display = 'none';
     });
 
-    document.querySelector('a[href="#contact"]').addEventListener('click', function () {
-    const contactDetails = document.getElementById('contact-details');
-    if (contactDetails) {
-      contactDetails.open = true;
+    openPopupBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popupOverlay.style.display = 'flex';
+    });
+
+    window.togglePeek = function () {
+      peekOverlay.style.display = 'flex';
+    };
+
+    window.closePeek = function () {
+      peekOverlay.style.display = 'none';
+    };
+
+    if (peekClose) {
+      peekClose.addEventListener('click', function () {
+        closePeek();
+      });
     }
   });
-  </script>
+</script>
+
+<!-- 2. Auto-open About + Contact -->
+<script>
+  document.querySelector('a[href="#about"]').addEventListener('click', function () {
+    const aboutDetails = document.getElementById('about-details');
+    if (aboutDetails) aboutDetails.open = true;
+  });
+
+  document.querySelector('a[href="#contact"]').addEventListener('click', function () {
+    const contactDetails = document.getElementById('contact-details');
+    if (contactDetails) contactDetails.open = true;
+  });
+</script>
+
+<!-- 3. MailerLite success handling -->
+<script>
+  function ml_webform_success_24783084() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-24783084 .row-success').show();
+    $('.ml-subscribe-form-24783084 .row-form').hide();
+  }
+</script>
+
+<!-- 4. MailerLite form script -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+
+<!-- 5. Optional: Gumroad button handler -->
+<script async src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
