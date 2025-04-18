@@ -186,6 +186,32 @@
 </div>
 
 <script>
+  const popupOverlay = document.getElementById('popup-overlay');
+  const closePopupBtn = document.getElementById('close-popup');
+  const openPopupBtn = document.getElementById('open-popup');
+
+  // Show popup on first load only (not again after closing)
+  window.addEventListener('load', function () {
+    // Only show the popup once per session
+    if (!sessionStorage.getItem('popupShown')) {
+      popupOverlay.style.display = 'flex';
+      sessionStorage.setItem('popupShown', 'true');
+    }
+  });
+
+  // Close popup
+  closePopupBtn.addEventListener('click', function () {
+    popupOverlay.style.display = 'none';
+  });
+
+  // Reopen popup from nav
+  openPopupBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    popupOverlay.style.display = 'flex';
+  });
+</script>
+
+<script>
   window.addEventListener('load', function () {
     setTimeout(function () {
       document.getElementById('popup-overlay').style.display = 'flex';
