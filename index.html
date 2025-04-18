@@ -100,7 +100,7 @@
     </section>
 
     <section class="collapsible-section" id="contact">
-      <details>
+      <details id="contact-details">
         <summary>Contact</summary>
         <p>Have a suggestion or a collaboration idea?  Reach out anytime at: <a href="mailto:contact@behindthemoonbooks.com">contact@behindthemoonbooks.com</a></p>
       </details>
@@ -184,6 +184,13 @@
         aboutDetails.open = true;
       }
     });
+
+    document.querySelector('a[href="#contact"]').addEventListener('click', function () {
+    const contactDetails = document.getElementById('contact-details');
+    if (contactDetails) {
+      contactDetails.open = true;
+    }
+  });
   </script>
 </body>
 </html>
