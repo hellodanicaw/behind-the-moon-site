@@ -92,7 +92,7 @@
     </section>
 
     <section class="collapsible-section" id="about">
-      <details>
+      <details id="about-details">
         <summary>About Behind the Moon Books</summary>
         <p>Behind the Moon Books is an independent publisher creating fun, screen-free activity books that spark imagination and curiosity.</p>
         <p>Our first title, the <em>Curious Creatures Field Guide</em>, invites kids to connect the dots, color imaginative hybrids, and record their own discoveries in a field guide format.</p>
@@ -173,6 +173,15 @@
         peekClose.addEventListener('click', function () {
           closePeek();
         });
+      }
+    });
+  </script>
+  <script>
+    // Automatically open the "About" section when link is clicked
+    document.querySelector('a[href="#about"]').addEventListener('click', function () {
+      const aboutDetails = document.getElementById('about-details');
+      if (aboutDetails) {
+        aboutDetails.open = true;
       }
     });
   </script>
