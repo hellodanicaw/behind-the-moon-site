@@ -400,8 +400,6 @@ footer {
   align-items: center;
   z-index: 1000;
   flex-direction: column;
-  position: fixed;
-  position: relative; /* 👈 add this */
 }
 
 .peek-popup {
