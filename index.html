@@ -3,141 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- ✅ Google tag (gtag.js) goes here, right after <head> -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM5MJTH6E6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ZM5MJTH6E6');
-  </script>
-
-  <meta name="description" content="..." />
   <title>Behind the Moon Books</title>
-  ...
-  <meta name="description" content="Step into a whimsical world of dot-to-dot puzzles and curious creatures. Behind the Moon Books offers magical, screen-free activities for kids!" />
-  <meta property="og:title" content="Behind the Moon Books" />
-  <meta property="og:description" content="Explore our dot-to-dot activity books full of charming hybrid creatures and field guide adventures." />
-  <meta property="og:image" content="https://behindthemoonbooks.com/cover.png" />
-  <meta property="og:url" content="https://behindthemoonbooks.com/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>Behind the Moon Books</title>
+
+  <!-- Fonts & Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM5MJTH6E6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZM5MJTH6E6');
+  </script>
 </head>
 <body>
-  <header>
-    <div class="logo-wrapper">
-      <img src="moon_logo.svg" alt="Left Moon" class="moon" />
-      <img src="logo.svg" alt="Behind the Moon Books Logo" class="logo" />
-      <img src="moon_logo.svg" alt="Right Moon" class="moon flip" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#" id="open-popup">Join the List</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <!-- Header + Nav -->
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#shop">shop</a></li>
+        <li><a href="#" id="open-mailing-list">join the list</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>WELCOME TO BEHIND THE MOON BOOKS</h1>
-      <p>Enter a magical world of dot-to-dot discoveries, curious creatures, and endless creativity.</p>
-    </section>
-
-    <div class="image-scroller">
-      <div class="scroller-wrapper">
-        <div class="scroller-track">
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.png" />
-          <img src="creature06.png" />
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.png" />
-          <img src="creature06.png" />
-          <img src="creature01.png" />
-          <img src="creature02.png" />
-          <img src="creature04.png" />
-          <img src="creature03.png" />
-          <img src="creature07.png" />
-          <img src="creature05.png" />
-          <img src="creature06.png" />
+  <!-- Banner + Scrolling SVG + Logo -->
+  <section class="layout-wrapper">
+    <div class="banner-stack">
+      <img src="images/btm_logo.gif" class="title-overlay" alt="BTM Logo" />
+      <div class="scrolling-banner">
+        <div class="float-track" id="banner-track">
+          <noscript>Your browser needs JavaScript enabled to view the SVG parade.</noscript>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="peek-wrapper">
-      <img src="cover.png" alt="Curious Creatures Field Guide Cover" class="static-cover" />
-      <div class="peek-trigger" onclick="togglePeek()">👀 Take a peek inside</div>
-    </div>
+  <section id="shop" class="w-full max-w-6xl mx-auto px-4 py-4">
+  <h2 class="new-release-heading text-5xl font-extrabold text-center tracking-widest uppercase text-[#fed7aa] drop-shadow-[2px_4px_0_rgba(0,0,0,0.6)] pt-2 mb-12 leading-tight">
+    NEW RELEASE!
+  </h2>
 
-    <div class="product-grid">
-      <section id="paperback" class="shop">
-        <div class="price-display">$9.99 <span class="price-tax-note">+ tax</span></div>
-        <h2>Buy the Book</h2>
-        <p>Grab the <strong>Curious Creatures Field Guide</strong> in paperback! Over 50 dot-to-dot puzzles and creatures to observe, name, and color.</p>
-        <a class="amazon-button buy-button" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">📖 Buy on Amazon</a>
-      </section>
-    
-      <section id="shop" class="shop">
-        <div class="price-display">$6.99 <span class="price-tax-note">+ tax</span></div>
-        <h2>Get the PDF</h2>
-        <p>Want a printable version? Download the <strong>Curious Creatures Field Guide</strong> instantly and start connecting the dots!</p>
-        <a class="gumroad-button buy-button small-button" href="https://gumroad.com/l/zmxae" target="_blank">Download PDF</a>
-      </section>
-    </div>
-    
-    <section class="mini-edition">
-      <div class="mini-content">
-        <img src="1.png" alt="Mini Edition Cover" class="mini-thumbnail" />
-        <h2>Try the Free Mini Edition!</h2>
-        <p>Download 4 hybrid dot-to-dot puzzles + Field Notes pages to color, name, and explore.</p>
-        <a href="https://behindthemoonbooks.gumroad.com/l/cnitgv" class="mini-button" target="_blank">Download Now</a>
+  <div class="flex justify-center items-center gap-6 mb-12">
+    <!-- Left Moon -->
+    <img src="images/moon_logo.svg" alt="Moon Logo Left" class="w-[250px] h-auto object-contain hidden md:block -translate-y-20 -translate-x-16"/>
+  
+    <!-- Mini Edition Card -->
+    <div class="flex flex-col justify-between border-[4px] border-black shadow-md bg-[#fAA307] p-6 w-full md:w-[37%] h-[350px] text-center">
+      <img src="images/1.png" alt="Mini Edition Cover" class="h-[120px] w-auto mx-auto mb-4 border border-black object-contain transition-transform duration-300 transform hover:scale-[3.6] hover:z-30 hover:border relative" />
+  
+      <div class="mt-auto">
+        <h2 class="text-xl font-bold uppercase tracking-wide mb-1 text-gray-900">
+          Try the Mini Edition!
+        </h2>
+        <p class="text-xs text-gray-700 mb-2 leading-snug">
+          Download 4 hybrid dot-to-dot puzzles and Field Notes pages — completely free!
+        </p>
+        <a 
+  href="https://behindthemoonbooks.gumroad.com/l/cnitgv" 
+  target="_blank" 
+  class="inline-block mt-3 bg-black text-white font-bold py-2 px-4 hover:bg-pink-600 transition-colors duration-200">
+  Download Now
+</a>
       </div>
-    </section>
+    </div>
+  
+    <!-- Right Moon -->
+    <img src="images/moon_logo.svg" alt="Moon Logo Right" class="w-[250px] h-auto object-contain hidden md:block -translate-y-20 translate-x-16"/>
+  </div>
+  
+  <div class="text-center mt-6">
+    <button 
+  id="peek-button"
+  class="shiny-button preview-button bg-white border-4 border-black text-black font-bold py-2 px-6 hover:bg-[#fd96a9] hover:text-[#fAA307] transition-all duration-300 glow-pulse">
+  Preview the Full Book
+</button>
 
-    <section class="collapsible-section" id="about">
-      <details id="about-details">
-        <summary>About Behind the Moon Books</summary>
-        <p>Behind the Moon Books is an independent publisher creating fun, screen-free activity books that spark imagination and curiosity.</p>
-        <p>Our first title, the <em>Curious Creatures Field Guide</em>, invites kids to connect the dots, color imaginative hybrids, and record their own discoveries in a field guide format.</p>
+<div id="preview-section">
+  <img src="images/peek_inside_preview.png" alt="Preview of the full book" />
+</div>
+
+  <!-- Product Cards -->
+  <div class="bg-slate-500 px-4 pt-4 pb-4 mt-14">
+    <div class="flex flex-col md:flex-row justify-center gap-12 items-start">
+      <!-- Amazon Card -->
+      <div class="flex flex-col border border-gray-300 p-6 shadow bg-white w-full md:w-[37%] min-h-[500px]">
+        <img src="images/cover.png" alt="Paperback Cover" class="w-full h-auto rounded mb-4" />
+        <div>
+          <h2 class="text-xl font-bold text-center mb-2">Buy the Book</h2>
+          <p class="text-gray-700 text-sm text-center mb-4">Grab the <strong>Curious Creatures Field Guide</strong> in paperback! Over 50 dot-to-dot puzzles and creatures to observe, name, and color.</p>
+        </div>
+        <a class="amazon-button buy-button mt-4" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <!-- Gumroad Card -->
+      <div class="flex flex-col border border-gray-300 p-6 shadow bg-white w-full md:w-[37%] min-h-[500px]">
+        <img src="images/pdf_cover.png" alt="PDF Cover" class="w-full h-auto rounded mb-4" />
+        <div>
+          <h2 class="text-xl font-bold text-center mb-2">Get the PDF</h2>
+          <p class="text-gray-700 text-sm text-center mb-4">Want a printable version? Download the <strong>Curious Creatures Field Guide</strong> instantly and start connecting the dots!</p>
+        </div>
+        <a class="gumroad-button buy-button mt-4" href="https://gumroad.com/l/zmxae" target="_blank">Download PDF</a>
+      </div>
+    </div>
+  </div>
+  </section>
+
+    <!-- About Section -->
+    <section class="max-w-3xl mx-auto px-4 py-16" id="about">
+      <details id="about-details" class="group bg-white border-4 border-black shadow-lg p-6 rounded-md">
+        <summary class="text-2xl font-bold uppercase cursor-pointer list-none flex justify-between items-center hover:text-pink-600 transition-colors">
+          <span>About Behind the Moon Books</span>
+          <span class="transition-transform group-open:rotate-45 text-3xl leading-none">+</span>
+        </summary>
+        <div class="mt-4 text-gray-800 text-base leading-relaxed space-y-4">
+          <p>
+            Behind the Moon Books is an independent publisher creating fun, screen-free activity books that spark imagination and curiosity.
+          </p>
+          <p>
+            Our first title, the <em>Curious Creatures Field Guide- Hybrid Edition </em>, invites kids to connect the dots, color imaginative hybrids, and record their own discoveries in a field guide format.
+          </p>
+        </div>
       </details>
     </section>
 
-    <section class="collapsible-section" id="contact">
-      <details id="contact-details">
-        <summary>Contact</summary>
-        <p>Have a suggestion or a collaboration idea?  Reach out anytime at: <a href="mailto:contact@behindthemoonbooks.com">contact@behindthemoonbooks.com</a></p>
-      </details>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section class="max-w-3xl mx-auto px-4 py-2" id="contact">
+    <details id="contact-details" class="group bg-white border-4 border-black shadow-lg p-6 rounded-md">
+      <summary class="text-2xl font-bold uppercase cursor-pointer list-none flex justify-between items-center hover:text-pink-600 transition-colors">
+        <span>Contact</span>
+        <span class="transition-transform group-open:rotate-45 text-3xl leading-none">+</span>
+      </summary>
+      <div class="mt-4 text-gray-800 text-base leading-relaxed">
+        <p>
+          Have a suggestion or a collaboration idea? Reach out anytime at:
+          <a href="mailto:contact@behindthemoonbooks.com" class="text-blue-700 underline hover:text-pink-600">contact@behindthemoonbooks.com</a>
+        </p>
+      </div>
+    </details>
+  </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Behind the Moon Books</p>
   </footer>
 
-  <!-- Popups -->
-<!-- Popups -->
-
-    <div id="popup-overlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-      <div class="popup-content">
-        <button id="close-popup" class="close-popup" aria-label="Close popup">&times;</button>
-        <h2 id="popup-title">Join The Mailing List!</h2>
+  <!-- Mailing List Popup -->
+  <div id="popup-overlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div class="popup-content">
+      <button id="close-popup" class="close-popup" aria-label="Close popup">&times;</button>
+      <h2 id="popup-title">Join The Mailing List!</h2>
       <p>Sign up to be the first to hear about new releases! Plus gain access to free puzzles, special offers, and exclusive Behind The Moon news!</p>
   
       <!-- BEGIN MailerLite Embed -->
@@ -145,11 +167,11 @@
         <div class="ml-form-align-center">
           <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" data-code="" method="post" target="_blank">
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1449339/forms/151575053274711484/subscribe" method="post" target="_blank">
                 <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow ml-last-item">
                     <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email" autocomplete="email" required>
+                      <input type="email" class="form-control" name="fields[email]" placeholder="Your email" required>
                     </div>
                   </div>
                 </div>
@@ -169,80 +191,18 @@
     </div>
   </div>
 
-  <div id="peekOverlay" class="peek-overlay">
-    <div class="peek-popup">
-      <img src="peek_inside_preview.png" alt="Peek Inside Pages" />
+    <!-- Preview Image Popup -->
+    <div id="preview-overlay" class="preview-overlay">
+      <div class="preview-popup">
+        <button id="close-preview" class="close-preview" aria-label="Close Preview">&times;</button>
+        <img src="images/peek_inside_preview.png" alt="Book Preview" />
+      </div>
     </div>
-    <button class="peek-close" onclick="closePeek()">×</button>
-  </div>
-
-  <!-- 1. Core interaction script -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const popupOverlay = document.getElementById('popup-overlay');
-    const closePopupBtn = document.getElementById('close-popup');
-    const openPopupBtn = document.getElementById('open-popup');
-    const peekOverlay = document.getElementById('peekOverlay');
-    const peekClose = document.querySelector('.peek-close');
-
-    if (!sessionStorage.getItem('popupShown')) {
-      setTimeout(() => {
-        popupOverlay.style.display = 'flex';
-        sessionStorage.setItem('popupShown', 'true');
-      }, 500);
-    }
-
-    closePopupBtn.addEventListener('click', function () {
-      popupOverlay.style.display = 'none';
-    });
-
-    openPopupBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      popupOverlay.style.display = 'flex';
-    });
-
-    window.togglePeek = function () {
-      peekOverlay.style.display = 'flex';
-    };
-
-    window.closePeek = function () {
-      peekOverlay.style.display = 'none';
-    };
-
-    if (peekClose) {
-      peekClose.addEventListener('click', function () {
-        closePeek();
-      });
-    }
-  });
-</script>
-
-<!-- 2. Auto-open About + Contact -->
-<script>
-  document.querySelector('a[href="#about"]').addEventListener('click', function () {
-    const aboutDetails = document.getElementById('about-details');
-    if (aboutDetails) aboutDetails.open = true;
-  });
-
-  document.querySelector('a[href="#contact"]').addEventListener('click', function () {
-    const contactDetails = document.getElementById('contact-details');
-    if (contactDetails) contactDetails.open = true;
-  });
-</script>
-
-<!-- 3. MailerLite success handling -->
-<script>
-  function ml_webform_success_24783084() {
-    var $ = ml_jQuery || jQuery;
-    $('.ml-subscribe-form-24783084 .row-success').show();
-    $('.ml-subscribe-form-24783084 .row-form').hide();
-  }
-</script>
-
-<!-- 4. MailerLite form script -->
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-
-<!-- 5. Optional: Gumroad button handler -->
-<script async src="https://gumroad.com/js/gumroad.js"></script>
+  
+  <!-- Scripts -->
+  
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
+  <script async src="https://gumroad.com/js/gumroad.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
