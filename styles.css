@@ -87,20 +87,30 @@ body {
 .scrolling-banner {
   width: 50vw;
   height: 400px;
-  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
   background-color: #dae1ec;
   position: relative;
   color: rgb(179, 186, 214);
   margin-left: 50px;
   margin-right: 50px;
   border: 2px solid #ccc;
+  scroll-behavior: auto !important;
+  scrollbar-width: none;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-.float-track {
+.scrolling-banner::-webkit-scrollbar {
+  display: none; /* hide Chrome scroll */
+}
+
+#banner-track {
   display: flex;
-  gap: 0.5rem;
+  gap: 2rem;
   width: max-content;
-  animation: scroll-left 120s linear infinite;
+  min-width: 600%;
   height: 100%;
   align-items: center;
 }
@@ -110,6 +120,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-snap-align: start;
 }
 
 .parade-item svg {
@@ -120,13 +131,20 @@ body {
 }
 
 .svg-0 {
-  height: 120% !important;
+  height: 115% !important;
 }
 
 .svg-1 {
-  height: 138% !important;
+  height: 140% !important;
 }
 
+.svg-2 {
+  height: 130% !important;
+}
+
+.parade-item.svg-1 + .parade-item.svg-2 {
+  margin-left: -10px;
+}
 /* Product Grid */
 .product-grid {
   display: flex;

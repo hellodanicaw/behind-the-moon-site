@@ -1,38 +1,77 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("\u2705 JS is running and DOM is ready");
+  console.log("✅ JS is running and DOM is ready");
 
-  // 🌠 SVG Banner Logic
-  const svgFiles = ['images/scroller_01.svg', 'images/scroller_03.svg'];
-  const container = document.getElementById('banner-track');
+  const svgFiles = ['images/scroller_01.svg', 'images/scroller_02.svg', 'images/scroller_03.svg'];
+  const track = document.getElementById('banner-track');
+  const scrollContainer = document.querySelector('.scrolling-banner'); // <== The element that scrolls
 
-  function addItems(repeatCount = 4) {
+  function addItemsAndScroll() {
+    let repeatCount = 8;
+    let sequence = [];
+  
     for (let i = 0; i < repeatCount; i++) {
-      svgFiles.forEach((file, index) => {
-        fetch(file)
-          .then(res => res.text())
-          .then(svg => {
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('parade-item', `svg-${index}`);
-            wrapper.innerHTML = svg;
-
-            const svgElement = wrapper.querySelector('svg');
-            if (svgElement) {
-              svgElement.style.height = '80%';
-              svgElement.style.width = 'auto';
-              svgElement.style.display = 'block';
-              svgElement.style.fill = 'currentColor';
-            }
-
-            container.appendChild(wrapper);
-          })
-          .catch(err => console.error('Error loading SVG:', file, err));
-      });
+      sequence.push(...svgFiles);
     }
+  
+    function loadNext(index = 0) {
+      if (index >= sequence.length) {
+        startAutoScroll();
+        return;
+      }
+  
+      const file = sequence[index];
+      const fileIndex = svgFiles.indexOf(file); // 0, 1, 2
+  
+      fetch(file)
+        .then(res => res.text())
+        .then(svg => {
+          const wrapper = document.createElement('div');
+          wrapper.classList.add('parade-item', `svg-${fileIndex}`);
+          wrapper.innerHTML = svg;
+  
+          const svgElement = wrapper.querySelector('svg');
+          if (svgElement) {
+            svgElement.style.height = '80%';
+            svgElement.style.width = 'auto';
+            svgElement.style.display = 'block';
+            svgElement.style.fill = 'currentColor';
+          }
+  
+          track.appendChild(wrapper);
+          loadNext(index + 1);
+        })
+        .catch(err => {
+          console.error('Error loading SVG:', file, err);
+          loadNext(index + 1); // Skip broken ones
+        });
+    }
+  
+    loadNext(); // start the first one
   }
+  
+  function startAutoScroll() {
+    const track = document.getElementById('banner-track');
+    let x = 0;
+    const speed = 0.5;
+  
+    function step() {
+      x -= speed;
+      track.style.transform = `translateX(${x}px)`;
+  
+      // Reset when it's halfway through (you may need to tweak this number!)
+      if (Math.abs(x) >= track.scrollWidth / 2) {
+        x = 0;
+      }
+  
+      requestAnimationFrame(step);
+    }
+  
+    requestAnimationFrame(step);
+  }
+  addItemsAndScroll();
 
-  addItems(4);
 
-  // 💌 Mailing List Popup
+  // 💌 Popup + Navigation (unchanged)
   const popupOverlay = document.getElementById('popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
   const joinListLink = document.getElementById('open-mailing-list');
@@ -40,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (joinListLink && popupOverlay) {
     joinListLink.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log('Join List toggled');
       popupOverlay.classList.add('show');
     });
   }
@@ -51,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Auto popup after 8s
   setTimeout(() => {
     if (!sessionStorage.getItem('popupShown') && popupOverlay) {
       popupOverlay.classList.add('show');
@@ -59,31 +96,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 8000);
 
-  // 📖 About Section Expand
   const aboutLink = document.querySelector('a[href="#about"]');
   const aboutDetails = document.getElementById('about-details');
 
   if (aboutLink && aboutDetails) {
-    aboutLink.addEventListener('click', function () {
+    aboutLink.addEventListener('click', () => {
       setTimeout(() => {
         aboutDetails.open = true;
       }, 200);
     });
   }
 
-  // 📨 Contact Section Expand
   const contactLink = document.querySelector('a[href="#contact"]');
   const contactDetails = document.getElementById('contact-details');
 
   if (contactLink && contactDetails) {
-    contactLink.addEventListener('click', function () {
+    contactLink.addEventListener('click', () => {
       setTimeout(() => {
         contactDetails.open = true;
       }, 200);
     });
   }
 
-  // 📚 Preview Section Toggle
   const peekButton = document.getElementById('peek-button');
   const previewOverlay = document.getElementById('preview-overlay');
   const closePreview = document.getElementById('close-preview');
@@ -104,3 +138,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
