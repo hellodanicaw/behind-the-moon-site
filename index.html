@@ -4,14 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Behind the Moon Books</title>
-
-  <!-- Fonts & Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM5MJTH6E6"></script>
   <script>
@@ -22,19 +19,17 @@
   </script>
 </head>
 <body>
-  <!-- Header + Nav -->
   <header class="site-header">
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="#about">about</a></li>
-        <li><a href="#shop-anchor">shop</a></li>
+        <li><a href="#product-cards">shop</a></li>
         <li><a href="#" id="open-mailing-list">join the list</a></li>
         <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Banner + Scrolling SVG + Logo -->
   <section class="layout-wrapper">
     <div class="banner-stack">
       <img src="images/btm_logo.gif" class="title-overlay" alt="BTM Logo" />
@@ -46,10 +41,6 @@
     </div>
   </section>
 
-  <!-- Shop Anchor -->
-  <div id="shop-anchor" style="margin-top: 140px;"></div>
-
-  <!-- Shop Section -->
   <section id="shop" class="w-full max-w-6xl mx-auto px-4 py-4">
     <h2 class="new-release-heading text-5xl font-extrabold text-center tracking-widest uppercase text-[#fed7aa] drop-shadow-[2px_4px_0_rgba(0,0,0,0.6)] pt-2 mb-12 leading-tight">
       NEW RELEASE!
@@ -57,18 +48,14 @@
 
     <div class="flex justify-center items-center gap-6 mb-12">
       <img src="images/moon_logo.svg" alt="Moon Logo Left" class="w-[250px] h-auto object-contain hidden md:block -translate-y-20 -translate-x-16"/>
-
-      <!-- Mini Edition Card -->
       <div class="flex flex-col justify-between border-[4px] border-black shadow-md bg-[#fAA307] p-6 w-full md:w-[37%] h-[350px] text-center">
         <img src="images/1.png" alt="Mini Edition Cover" class="h-[120px] w-auto mx-auto mb-4 border border-black object-contain transition-transform duration-300 transform hover:scale-[3.6] hover:z-30 hover:border relative" />
-
         <div class="mt-auto">
           <h2 class="text-xl font-bold uppercase tracking-wide mb-1 text-gray-900">Try the Mini Edition!</h2>
           <p class="text-xs text-gray-700 mb-2 leading-snug">Download 4 hybrid dot-to-dot puzzles and Field Notes pages — completely free!</p>
           <a href="https://behindthemoonbooks.gumroad.com/l/cnitgv" target="_blank" class="inline-block mt-3 bg-black text-white font-bold py-2 px-4 hover:bg-pink-600 transition-colors duration-200">Download Now</a>
         </div>
       </div>
-
       <img src="images/moon_logo.svg" alt="Moon Logo Right" class="w-[250px] h-auto object-contain hidden md:block -translate-y-20 translate-x-16"/>
     </div>
 
@@ -76,43 +63,41 @@
       <button id="peek-button" class="shiny-button preview-button bg-white border-4 border-black text-black font-bold py-2 px-6 hover:bg-[#fd96a9] hover:text-[#fAA307] transition-all duration-300 glow-pulse">
         Preview a Sample of the Full Book
       </button>
+      <div id="preview-section">
+        <img src="images/peek_inside_preview.png" alt="Preview of the full book" />
+      </div>
     </div>
 
-    <div id="preview-section">
-      <img src="images/peek_inside_preview.png" alt="Preview of the full book" />
-    </div>
-
-    <!-- Product Cards -->
-    <div class="bg-slate-500 px-4 pt-4 pb-4 mt-14">
+    <div id="product-cards" class="bg-slate-500 px-4 pt-4 pb-4 mt-20">
       <div class="flex flex-col md:flex-row justify-center gap-12 items-start">
-        <!-- Amazon Card -->
         <div class="flex flex-col border border-gray-300 p-6 shadow bg-white w-full md:w-[37%] min-h-[500px]">
           <img src="images/cover.png" alt="Paperback Cover" class="w-full h-auto rounded mb-4" />
           <div>
             <h2 class="text-xl font-bold text-center mb-2">Buy the Book</h2>
             <p class="text-gray-700 text-sm text-center mb-4">Grab the <strong>Curious Creatures Field Guide</strong> in paperback! Over 50 dot-to-dot puzzles and creatures to observe, name, and color.</p>
-            <p class="text-center font-bold text-lg">$9.99 + tax</p>
           </div>
-          <a class="amazon-button buy-button mt-4" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">Buy on Amazon</a>
+          <a class="amazon-button buy-button mt-4 text-center" href="https://www.amazon.com/dp/B0F5GCW24C" target="_blank">
+            <div class="text-sm font-semibold">$9.99 + tax</div>
+            Buy on Amazon
+          </a>
         </div>
 
-        <!-- Gumroad Card -->
         <div class="flex flex-col border border-gray-300 p-6 shadow bg-white w-full md:w-[37%] min-h-[500px]">
           <img src="images/pdf_cover.png" alt="PDF Cover" class="w-full h-auto rounded mb-4" />
           <div>
             <h2 class="text-xl font-bold text-center mb-2">Get the PDF</h2>
             <p class="text-gray-700 text-sm text-center mb-4">Want a printable version? Download the <strong>Curious Creatures Field Guide</strong> instantly and start connecting the dots!</p>
-            <p class="text-center font-bold text-lg">$6.99 + tax</p>
           </div>
-          <a class="gumroad-button buy-button mt-4" href="https://gumroad.com/l/zmxae" target="_blank">Download PDF</a>
+          <a class="gumroad-button buy-button mt-4 text-center" href="https://gumroad.com/l/zmxae" target="_blank">
+            <div class="text-sm font-semibold">$6.99 + tax</div>
+            Download PDF
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Everything else stays the same -->
-  <!-- About, Contact, Footer, Popups, Scripts -->
-  <!-- Paste your existing About, Contact, and Footer sections here -->
-  <!-- Make sure to include <script src="main.js"></script> at the end -->
+  <!-- [KEEP ALL OTHER CONTENT AS IS BELOW THIS POINT] -->
+  <!-- About, Contact, Popups, Scripts... -->
 </body>
 </html>
