@@ -88,6 +88,7 @@ body {
   width: 50vw;
   height: 400px;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   background-color: #dae1ec;
@@ -120,7 +121,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: start;
 }
 
 .parade-item svg {
