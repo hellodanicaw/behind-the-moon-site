@@ -1,11 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("✅ JS is running and DOM is ready");
 
-  const svgFiles = ['images/scroller_01.svg', 'images/scroller_02.svg', 'images/scroller_03.svg'];
+  const svgFiles = ['images/scroller_01.svg', 'images/scroller_02.svg', 'images/scroller_03.svg', 'images/scroller_04.svg'];
   const scrollContainer = document.querySelector('.scrolling-banner');
   const track = document.getElementById('banner-track');
   const repeatCount = 100;
 
+  // 🟢 Define startAutoScroll FIRST
+  function startAutoScroll() {
+    const speed = 0.3;
+    let frame = 0;
+
+    function step() {
+      scrollContainer.scrollLeft += speed;
+      frame++;
+
+      if (frame % 60 === 0) {
+        console.log(`📦 Frame ${frame}: scrollLeft = ${scrollContainer.scrollLeft}`);
+      }
+
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        console.log("🔁 Looping back to start");
+        scrollContainer.scrollLeft = 1;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    console.log("🎬 Auto scroll starting");
+    requestAnimationFrame(step);
+  }
+
+  // 🔁 Then define addItems
   function addItems(callback) {
     const sequence = [];
     for (let i = 0; i < repeatCount; i++) {
@@ -13,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     let index = 0;
+    let hasStartedScrolling = false;
+
     function loadNext() {
       if (index >= sequence.length) {
-        console.log("✅ All SVGs loaded. Starting scroll...");
-        callback();
+        console.log("✅ All SVGs loaded.");
         return;
       }
 
@@ -40,6 +67,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
           track.appendChild(wrapper);
           index++;
+
+          // ⏱ Start scrolling early
+          if (index === 4 && !hasStartedScrolling) {
+            console.log("🎬 Early scroll trigger");
+            hasStartedScrolling = true;
+            callback(); // ← this is now defined
+          }
+
           loadNext();
         })
         .catch(err => {
@@ -52,29 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadNext();
   }
 
-  function startAutoScroll() {
-    const speed = 0.3;
-    let frame = 0;
-  
-    function step() {
-      scrollContainer.scrollLeft += speed;
-      frame++;
-  
-      if (frame % 60 === 0) {
-        console.log(`📦 Frame ${frame}: scrollLeft = ${scrollContainer.scrollLeft}`);
-      }
-  
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        console.log("🔁 Looping back to start");
-        scrollContainer.scrollLeft = 1;
-      }
-  
-      requestAnimationFrame(step);
-    }
-  
-    console.log("🎬 Auto scroll starting");
-    requestAnimationFrame(step);
-  }
-
+  // ✅ This line now works because startAutoScroll is defined above
   addItems(startAutoScroll);
 });

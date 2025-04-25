@@ -109,7 +109,6 @@ body {
 
 #banner-track {
   display: flex;
-  gap: 2rem;
   width: max-content;
   min-width: 600%;
   height: 100%;
@@ -130,22 +129,41 @@ body {
   fill: currentColor;
 }
 
+.parade-item.svg-0 {
+  margin-left: 15px;  /* nudge svg-1 right, closer to svg-2 */
+}
+
+.parade-item.svg-1 {
+  margin-left: 15px;  /* nudge svg-1 right, closer to svg-2 */
+}
+
+.parade-item.svg-2 {
+  margin-left: -25px;  /* nudge svg-1 right, closer to svg-2 */
+}
+
+.parade-item.svg-3 {
+  margin-left: -20px; /* nudge svg-3 left, closer to svg-2 */
+}
+
 .svg-0 {
   height: 115% !important;
+  margin-left: -20px
 }
 
 .svg-1 {
-  height: 140% !important;
+  height: 135% !important;
 }
 
 .svg-2 {
   height: 130% !important;
 }
 
-.parade-item.svg-1 + .parade-item.svg-2 {
-  margin-left: -10px;
+.svg-3 {
+  height: 130% !important;
+  padding-bottom: 14px;
 }
-/* Product Grid */
+
+/*product grid*/
 .product-grid {
   display: flex;
   flex-wrap: wrap;
